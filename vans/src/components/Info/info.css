@@ -1,0 +1,133 @@
+.infocont{
+    display: flex;
+    flex-direction: column;
+}
+
+.infotitle{
+    font-size: 22px;
+    font-weight: bold;
+    height: 50px;
+    width: 100%;
+    border-bottom: solid 2px black;
+    margin: 30px 0px;
+}
+
+.infocontent{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px;
+}
+
+.vansmain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.vansname{
+    margin: 0px 0px;
+    padding-right: 10px;
+    font-size: 26px;
+    font-family: Helvetica;
+}
+
+.good_service{
+    font-size: 12px;
+    color: rgb(81, 179, 218);
+    font-weight: bold;
+}
+
+.vanssub{
+    font-size: 13px;
+    color: #888888;
+}
+
+.channel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 39px 0px 0px 0px;
+}
+
+.instagram_logo{
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    margin: 0px 10px 0px 0px;
+}
+
+.channeltitle{
+    font-size: 14px;
+    color: #888888;
+    width: 89px;
+}
+
+.insta_adress{
+    color: #0068C3;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.vanscontent{
+    margin: 29px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.content_info{
+    display: flex;
+    flex-direction: row;
+}
+
+.content_title{
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Helvetica;
+    margin: 6px 0px;
+}
+
+.info_left{
+    display: flex;
+    flex-direction: column;   
+    width: 252px;
+}
+
+.info_right{
+    display: flex;
+    flex-direction: column;
+    margin-left: 53px;
+}
+
+.info_sub{
+    display: flex;
+    flex-direction: row;
+    margin: 4px 0px;
+}
+
+.info_sub_1{
+    color: #888888;
+    font-size: 14px;
+    font-family: Helvetica;
+    width: 80px;
+    padding-right: 25px;
+}
+
+.info_sub_2{
+    font-size: 14px;
+    font-family: Helvetica;
+    width: 220px; 
+}
+
+.info_sub_3{
+    font-size: 14px;
+    font-family: Helvetica;
+    width: 120px;
+    color: #888888;
+    padding-right: 25px;
+}
+
+.info_sub_4{
+    font-size: 14px;
+    font-family: Helvetica;
+    width: 400px;
+}
