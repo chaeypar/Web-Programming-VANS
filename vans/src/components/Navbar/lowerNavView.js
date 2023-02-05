@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 function Tab(props){
     return (
-            <li className={props.char}>{props.title}</li>
+            <li className={props.char}><Link to={props.url}>{props.title}</Link></li>
     )
 }
 export default function LowerNavView(props){

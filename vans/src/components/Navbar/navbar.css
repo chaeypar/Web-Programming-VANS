@@ -12,13 +12,19 @@
 .upper{
     display: flex;
     flex-direction: row;  
-    width: 1500px;
+    width: 100%;
     border-bottom: solid black 1px;
 }
 
 .naverlogo{
     font: lightgray;
 }
+
+.shoppinglogo{
+    font-size: 14px;
+    margin-left: 10px;
+}
+
 .mid{
     display: flex;
     flex-direction: row;
@@ -64,28 +70,38 @@
     flex-direction: row;
     white-space: nowrap;
     height: 60px !important;
-    width: 1500px;
+    width: 100%;
     list-style: none;
     padding-left: 0px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     height: 30px;
     align-items: center;
-    justify-content: center;
 }
 
-.tableft{
-
+.leftbar{
+    font-size: 14px;
+    color: black;
+    padding: 0px 20px;
 }
 
-.tableft:hover{
-
+.leftbar:hover{
+    color: rgb(57, 152, 184);
+    font-weight: bold;
 }
 
-.tabright{
-
+.rightbar{
+    text-decoration-line: none !important;
+    font-size: 14px;
+    color: gray;
+    padding: 0px 20px;
 }
 
-.tabright:hover{
+.rightbar:hover{
+    color: black;
+    font-weight: bold;
+}
 
+Link{
+    text-decoration: none !important;
 }

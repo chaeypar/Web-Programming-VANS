@@ -1,5 +1,6 @@
 import vans from '../../image/Vans_Logo.png';
 import search from '../../image/search.png';
+import alarm from '../../image/alarm.png';
 
 import './navbar.css';
 
