@@ -42,10 +42,3 @@ class UserLogin(generics.CreateAPIView):
         else:
         	return Response({'error':'비밀번호가 맞지 않습니다.'}, status=status.HTTP_400_BAD_REQUEST)
         
-
-  
-        
-  
-        
-        
-
