@@ -1,5 +1,6 @@
 from .models import User, AuthToken
 from .serializer import UserSerializer
+from .jwt import generateAccessToken
 
 from rest_framework import generics, status
 from rest_framework.response import Response
@@ -19,10 +20,10 @@ class UserSignUp(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         user = serializer.instance
-        token = AuthToken.objects.create(user=user)
         user.set_password(request.data.get('password'))
         user.save()
-        return Response({'id': str(user.id), 'token': str(token.id)}, status=status.HTTP_201_CREATED)
+        token = generateAccessToken(user)
+        return Response(data={'token': token, 'info': serializer.data}, status=status.HTTP_201_CREATED)
     
 class UserLogin(generics.CreateAPIView):
     serializer_class = UserSerializer
@@ -33,12 +34,12 @@ class UserLogin(generics.CreateAPIView):
         try:
             user = User.objects.get(email=email) # stip().lower()?
         except User.DoesNotExist:
-            return Response({'error':'존재하지 않는 유저입니다.'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(data={'error':'존재하지 않는 유저입니다.'}, status=status.HTTP_400_BAD_REQUEST)
+        
         if user.check_password(password):
-            token = AuthToken.objects.create(user=user)
-            serializer = self.get_serializer(data=user)
-            serializer.is_valid(raise_exception=True)
-            return Response({'token': str(token.id), 'info': serializer.data}, status=status.HTTP_200_OK)
+            token = generateAccessToken(user)
+            serializer = self.get_serializer(user)
+            return Response(data={'token': token, 'info': serializer.data}, status=status.HTTP_200_OK)
         else:
-        	return Response({'error':'비밀번호가 맞지 않습니다.'}, status=status.HTTP_400_BAD_REQUEST)
+        	return Response(data={'error':'비밀번호가 맞지 않습니다.'}, status=status.HTTP_400_BAD_REQUEST)
         

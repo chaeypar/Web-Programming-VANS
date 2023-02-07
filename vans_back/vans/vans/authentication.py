@@ -24,7 +24,7 @@ class JWTAuthentication(BaseAuthentication):
 			)
             id = access_data.get('sub')
             user = User.objects.get(id=id)
-            return (User, None)
+            return (user, None)
         except:
             return None
     
