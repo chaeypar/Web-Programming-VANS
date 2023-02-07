@@ -1,0 +1,5 @@
+vans_back/venv/
+vans_back/vans/user/__pycache__/*
+vans_back/vans/vans/__pycache__/*
+package-lock.json
+`vans_back/vans/db.sqlite3
