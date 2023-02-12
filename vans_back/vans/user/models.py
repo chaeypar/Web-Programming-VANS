@@ -48,11 +48,15 @@ class User(AbstractBaseUser, PermissionsMixin):
     birth_year = models.IntegerField(null=True, blank=True)
     # profile_image = models.ImageField(null=True, blank=True)
     
+    is_seller = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
+    # campany 
     
+    
+    # client_user
     shipping_name = models.CharField(max_length=20, null=True, blank=True)
     shipping_phone_number = models.CharField(
         max_length=11, null=True, blank=True)
