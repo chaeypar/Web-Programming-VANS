@@ -6,6 +6,11 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 import uuid
+GENDER_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other'),
+    ]
 
 def generate_hex(nbytes=32):
     return secrets.token_hex(nbytes)
@@ -44,7 +49,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone_number = models.CharField(max_length=11, blank=True, null=True)
     nickname = models.CharField(max_length=20, blank=True, null=True)
     name = models.CharField(max_length=20, null=True, blank=True)
-    gender = models.CharField(max_length=1, null=True, blank=True)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True, blank=True)
     birth_year = models.IntegerField(null=True, blank=True)
     # profile_image = models.ImageField(null=True, blank=True)
     
